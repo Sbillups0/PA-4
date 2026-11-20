@@ -6,7 +6,7 @@ PageTableEntry page_table[PAGE_COUNT];
 
 //initializing the page table
 void initialize_page_table(){
-    for (int i; i<PAGE_COUNT;i++){
+    for (int i = 0; i<PAGE_COUNT;i++){
         page_table[i].frame_num = -1;
         page_table[i].valid = 0;
 
@@ -24,11 +24,18 @@ int page_lookup(int page_num){
     return -1;
 }
 
-int update_page_table(int page_num, int frame_num){
+void update_page_table(int page_num, int frame_num){
     //check if in bounds
     if (page_num < 0 || page_num >= PAGE_COUNT) return;
 
     page_table[page_num].frame_num = frame_num;
     page_table[page_num].valid = 1;
 
+}
+
+void invalidate_page(int page_num){
+    if (page_num < 0 || page_num >= PAGE_COUNT) return;
+    page_table[page_num].frame_num = -1;
+    page_table[page_num].valid = 0;
+    
 }

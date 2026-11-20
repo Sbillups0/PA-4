@@ -1,0 +1,5 @@
+memsimulator
+memsimulator.dSYM/
+*.o
+out.txt
+.DS_Store

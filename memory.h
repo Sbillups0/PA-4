@@ -16,5 +16,6 @@ int load_page(int page_number, int frame_number, FILE *backing_store);
 
 int read_memory(int frame_number, int offset);
 
+void print_frame(int frame_number);
 
 #endif

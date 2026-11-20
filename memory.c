@@ -56,3 +56,9 @@ int load_page(int page_num, int frame_num, FILE *backing_store){
 
     return physical_mem[frame_number][offset];
 }
+
+void print_frame(int frame_number) {
+    for (int i = 0; i < PAGE_SIZE; i++) {
+        printf("%02X", (unsigned char)physical_mem[frame_number][i]);
+    }
+}

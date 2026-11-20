@@ -16,4 +16,5 @@ int page_lookup(int page_num);
 
 void update_page_table(int page_num, int frame_num);
 
+void invalidate_page(int page_num);
 #endif
